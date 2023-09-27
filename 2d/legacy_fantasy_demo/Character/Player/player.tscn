@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b2igmeda1df8i"]
+[gd_scene load_steps=46 format=3 uid="uid://b2igmeda1df8i"]
 
 [ext_resource type="Script" path="res://Scripts/movement.gd" id="1_8almq"]
 [ext_resource type="Texture2D" uid="uid://dikuil7nrv6tq" path="res://Art/Legacy-Fantasy - High Forest/Character/Idle/Idle-Sheet.png" id="1_32tc7"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://Scripts/state_machine/Ground.gd" id="10_6plui"]
 [ext_resource type="Script" path="res://Scripts/state_machine/Attack.gd" id="11_ayvfs"]
 [ext_resource type="Script" path="res://Character/Player/Sword.gd" id="12_uvwje"]
+[ext_resource type="Script" path="res://Character/Player/attack_1.gd" id="13_vybyb"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a1y7a"]
 animation = &"attack_1"
@@ -483,7 +484,7 @@ script = ExtResource("1_8almq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.992481, 1)
-texture = ExtResource("1_32tc7")
+texture = ExtResource("6_14gvj")
 hframes = 4
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -538,6 +539,7 @@ script = ExtResource("12_uvwje")
 position = Vector2(30.5, -7)
 shape = SubResource("RectangleShape2D_moml0")
 disabled = true
+script = ExtResource("13_vybyb")
 
 [node name="attack_2" type="CollisionShape2D" parent="Sword"]
 position = Vector2(21, 3)

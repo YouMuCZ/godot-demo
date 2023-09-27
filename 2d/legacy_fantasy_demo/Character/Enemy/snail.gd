@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 	if character_state_machine.check_can_move():
 		velocity.x = Vector2.LEFT.x * move_speed
-#	else:
-#		velocity.x = move_toward(velocity.x, 0, move_speed)
+	else:
+		velocity.x = move_toward(velocity.x, 0, move_speed)
 
 	move_and_slide()
