@@ -16,6 +16,8 @@ func _ready() -> void:
 			child.character = character
 			child.playback = animation_tree["parameters/playback"]
 
+			child.connect("interrupt_state", on_state_interrupt)
+
 
 func _physics_process(delta: float) -> void:
 	if curr_state.next_state:
@@ -39,3 +41,8 @@ func switch_states(new_state : State):
 
 func  _input(event: InputEvent) -> void:
 	curr_state.state_input(event)
+
+
+func on_state_interrupt(new_state : State):
+	switch_states(new_state)
+

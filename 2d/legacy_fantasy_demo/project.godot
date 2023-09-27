@@ -15,6 +15,10 @@ run/main_scene="res://Worlds/main.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalManager="*res://signal_manager.gd"
+
 [display]
 
 window/stretch/scale=3.0
@@ -32,6 +36,12 @@ ui_attack={
 "events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
 
 [rendering]
 

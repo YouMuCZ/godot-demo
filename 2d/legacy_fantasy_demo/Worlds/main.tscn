@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://conj8ijuq7u3p"]
+[gd_scene load_steps=7 format=3 uid="uid://conj8ijuq7u3p"]
 
 [ext_resource type="Texture2D" uid="uid://5805pn4bctf2" path="res://Art/Legacy-Fantasy - High Forest/Assets/Tiles.png" id="1_ld5to"]
-[ext_resource type="PackedScene" uid="uid://b2igmeda1df8i" path="res://Prefabs/player.tscn" id="2_o33po"]
+[ext_resource type="PackedScene" uid="uid://b2igmeda1df8i" path="res://Character/Player/player.tscn" id="2_o33po"]
+[ext_resource type="PackedScene" uid="uid://khrjcujkhthj" path="res://Character/Enemy/snail.tscn" id="3_83ngx"]
+[ext_resource type="PackedScene" uid="uid://c1eo8g7gyj0du" path="res://UI/ui_manager.tscn" id="4_u2ku7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0yx7x"]
 texture = ExtResource("1_ld5to")
@@ -1442,3 +1444,8 @@ process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Snail" parent="." instance=ExtResource("3_83ngx")]
+position = Vector2(381, 73)
+
+[node name="UIManager" parent="." instance=ExtResource("4_u2ku7")]
