@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://yvhoevhuhb8k"]
+
+[ext_resource type="Texture2D" uid="uid://2hx3rg65jhdo" path="res://Mockups/mockup4-close1.png" id="1_ijfs7"]
+[ext_resource type="Texture2D" uid="uid://cwf5uotxfb6qg" path="res://icon.svg" id="2_0yaf4"]
+[ext_resource type="Script" path="res://scene/player.gd" id="2_y6e1d"]
+[ext_resource type="Script" path="res://scene/minimap.gd" id="4_7817l"]
+
+[node name="minimap" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+texture = ExtResource("1_ijfs7")
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(0, 140)
+script = ExtResource("2_y6e1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+scale = Vector2(0.1, 0.105)
+texture = ExtResource("2_0yaf4")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
+offset_left = 94.0
+offset_top = 112.0
+offset_right = 134.0
+offset_bottom = 152.0
+
+[node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+script = ExtResource("4_7817l")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/SubViewportContainer/SubViewport"]
+texture = ExtResource("1_ijfs7")
+
+[node name="Camera2D" type="Camera2D" parent="UI/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/SubViewportContainer"]
+position = Vector2(20, 20)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_0yaf4")
