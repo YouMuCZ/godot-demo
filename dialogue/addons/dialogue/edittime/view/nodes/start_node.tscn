@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmb8jf2qtjb2h"]
+
+[ext_resource type="Script" path="res://addons/dialogue/edittime/view/nodes/start_node.gd" id="1_six4i"]
+
+[node name="StartNode" type="GraphNode"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -27.0
+offset_right = 36.0
+offset_bottom = 27.0
+grow_vertical = 2
+title = "Start Node"
+selected = true
+script = ExtResource("1_six4i")

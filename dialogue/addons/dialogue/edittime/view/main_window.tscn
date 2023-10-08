@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvv14otlrlp3e"]
+
+[ext_resource type="Script" path="res://addons/dialogue/edittime/view/main_window.gd" id="1_gyora"]
+[ext_resource type="Script" path="res://addons/dialogue/edittime/model/Workspace.gd" id="2_ihwy0"]
+[ext_resource type="Script" path="res://addons/dialogue/edittime/view/GraphEdit.gd" id="2_je0oo"]
+[ext_resource type="PackedScene" uid="uid://cmb8jf2qtjb2h" path="res://addons/dialogue/edittime/view/nodes/start_node.tscn" id="3_3pqww"]
+
+[node name="MainWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_gyora")
+
+[node name="Window" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="Window"]
+layout_mode = 2
+
+[node name="FileMenu" type="MenuButton" parent="Window/Toolbar"]
+layout_mode = 2
+keep_pressed_outside = true
+text = "File"
+switch_on_hover = true
+item_count = 4
+popup/item_0/text = "New"
+popup/item_0/id = 0
+popup/item_1/text = "Open"
+popup/item_1/id = 1
+popup/item_2/text = "Save"
+popup/item_2/id = 2
+popup/item_3/text = "Save As"
+popup/item_3/id = 3
+
+[node name="DevMenu" type="MenuButton" parent="Window/Toolbar"]
+layout_mode = 2
+keep_pressed_outside = true
+text = "Dev"
+switch_on_hover = true
+
+[node name="Workspace" type="Control" parent="Window"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_ihwy0")
+nodes_res = Array[PackedScene]([ExtResource("3_3pqww")])
+
+[node name="GraphEdit" type="GraphEdit" parent="Window/Workspace"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_je0oo")
+
+[node name="PopupMenu" type="PopupMenu" parent="Window/Workspace/GraphEdit"]
+
+[node name="Statusbar" type="HBoxContainer" parent="Window"]
+layout_mode = 2
+
+[connection signal="popup_request" from="Window/Workspace/GraphEdit" to="Window/Workspace/GraphEdit" method="_on_popup_request"]

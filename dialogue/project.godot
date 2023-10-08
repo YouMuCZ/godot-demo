@@ -10,6 +10,11 @@ config_version=5
 
 [application]
 
-config/name="plugins_demo"
+config/name="dialogue"
+run/main_scene="res://addons/dialogue/edittime/view/main_window.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue/plugin.cfg")
