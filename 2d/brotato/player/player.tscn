@@ -26,4 +26,5 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="weapons_manager" parent="." instance=ExtResource("3_86uhu")]
+position = Vector2(38.3333, 0)
 scale = Vector2(1.01091, 1.07646)
