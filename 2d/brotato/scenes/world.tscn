@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/world.gd" id="1_yrsbb"]
 [ext_resource type="PackedScene" uid="uid://ds4yrgv0br4vb" path="res://player/player.tscn" id="2_w5wlb"]
 [ext_resource type="Texture2D" uid="uid://darar8hh4xbq2" path="res://assets/bg.png" id="3_e4b67"]
-[ext_resource type="PackedScene" uid="uid://cv7yh5mesgvv4" path="res://enemy/enemy.tscn" id="3_tgq48"]
+[ext_resource type="PackedScene" uid="uid://gnv6eoyphi45" path="res://enemy/enemy_manager.tscn" id="4_3o6so"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vfogs"]
 texture = ExtResource("3_e4b67")
@@ -1138,7 +1138,7 @@ sources/1 = SubResource("TileSetAtlasSource_vfogs")
 [node name="world" type="Node2D"]
 script = ExtResource("1_yrsbb")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." groups=["map"]]
 position = Vector2(0, 3)
 scale = Vector2(6, 6)
 tile_set = SubResource("TileSet_2ngii")
@@ -1163,6 +1163,5 @@ layer_2/tile_data = PackedInt32Array(1114112, 917505, 0, 1114113, 917505, 0, 111
 [node name="player" parent="." instance=ExtResource("2_w5wlb")]
 position = Vector2(921, 578)
 
-[node name="enemy" parent="." instance=ExtResource("3_tgq48")]
-z_index = 19
-position = Vector2(378, 314)
+[node name="enemy_manager" parent="." groups=["enemy"] instance=ExtResource("4_3o6so")]
+metadata/_edit_group_ = true

@@ -21,7 +21,6 @@ func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_inde
 		var coords = body.get_coords_for_body_rid(body_rid)
 		var tile_data = body.get_cell_tile_data(2, coords)
 		var isWall = tile_data.get_custom_data("isWall")
-		print(111111111, isWall)
 		if isWall:
 			self.queue_free()
 

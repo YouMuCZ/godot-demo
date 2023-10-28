@@ -7,11 +7,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e6iq7"]
 size = Vector2(113, 114)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 20
 scale = Vector2(0.6, 0.6)
 collision_mask = 2
 script = ExtResource("1_2p6cm")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_hprox")
