@@ -16,7 +16,6 @@ const equipment_quality = {
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var eq = randi_range(1, 5)
-	sprite.material = sprite.material
 	sprite.material.set_shader_parameter(
 		"line_color", Color(equipment_quality[str(eq)])
 		)
