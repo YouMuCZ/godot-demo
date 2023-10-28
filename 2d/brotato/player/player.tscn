@@ -10,6 +10,7 @@ size = Vector2(113, 114)
 [node name="player" type="CharacterBody2D"]
 z_index = 20
 scale = Vector2(0.6, 0.6)
+collision_mask = 2
 script = ExtResource("1_2p6cm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,5 +27,3 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="weapons_manager" parent="." instance=ExtResource("3_86uhu")]
-position = Vector2(38.3333, 0)
-scale = Vector2(1.01091, 1.07646)
