@@ -52,8 +52,15 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") and !attack_enemy.has(body):
 		attack_enemy.append(body)
+	attack_enemy.sort_custom(
+		func (x, y):
+			var x_dis = x.global_position.distance_to(self.global_position)
+			var y_dis = y.global_position.distance_to(self.global_position)
+			return  x_dis < y_dis
+	)
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("enemy") and attack_enemy.has(body):
 		attack_enemy.remove_at(attack_enemy.find(body))
+	attack_enemy.sort()
